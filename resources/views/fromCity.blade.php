@@ -24,6 +24,11 @@
                 </a>
             </li>
             <li>
+                <a href="/news-all">
+                    Все новости здесь
+                </a>
+            </li>
+            <li>
                 <a href="/news-all/kostroma">
                     Кострома
                 </a>
@@ -35,7 +40,7 @@
             </li>
         </ul>
     </nav>
-    <h1>Все новости</h1>
+    <h1>Все новости города</h1>
     <div class="row">
         @foreach ($news as $item)
             <div class="col-4 mb-2">

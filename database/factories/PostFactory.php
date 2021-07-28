@@ -21,12 +21,14 @@ class PostFactory extends Factory
      */
     public function definition()
     {
+        $city_array = ['irkutsk', 'kostroma', ''];
         return [
             'image' => 'test.jpg',
             'title' => $this->faker->word(),
             'excerpt' => $this->faker->paragraph(),
             'full_text' => $this->faker->text(),
-            'is_favorite' => rand(0, 1)
+            'is_favorite' => rand(0, 1),
+            'city' => $city_array[rand(0, 2)]
         ];
     }
 }

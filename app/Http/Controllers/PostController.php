@@ -21,10 +21,23 @@ class PostController extends Controller
 
     public function all()
     {
+        //dd($city);
         $news = DB::table('posts')
             ->get();
 
         return view('all', [
+            'news' => $news
+        ]);
+    }
+
+    public function fromCity($city)
+    {
+        //dd($city);
+        $news = DB::table('posts')
+            ->where('city', $city)
+            ->orWhere('city', '')
+            ->get();
+        return view('fromCity', [
             'news' => $news
         ]);
     }

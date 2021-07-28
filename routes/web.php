@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class, 'index']);
 Route::get('/news-all', [PostController::class, 'all']);
+Route::get('/news-all/{city}', [PostController::class, 'fromCity']);
 Route::get('/news-item/{id}', [PostController::class, 'single']);
 Route::post('/findnews', [PostController::class, 'find']);
 Route::get('/to-favor/{id}', [PostController::class, 'toFavor']);

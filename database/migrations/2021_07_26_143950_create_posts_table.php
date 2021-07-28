@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->text('excerpt');
             $table->text('full_text');
             $table->tinyInteger('is_favorite')->default(0);
+            $table->string('city');
             $table->timestamps();
         });
     }
