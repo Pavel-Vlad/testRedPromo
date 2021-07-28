@@ -24,3 +24,16 @@ php artisan migrate
 php artisan db:seed --class=PostSeeder
 
 
+Для тестирования выполненного задания:
+
+База данных наполняется Сидом PostSeeder
+
+Создаем пустую базу данных, редактируем .env файл.
+
+Выполняем команды:
+
+php artisan migrate
+
+php artisan db:seed --class=PostSeeder
+
+

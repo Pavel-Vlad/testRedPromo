@@ -21,7 +21,6 @@ class PostController extends Controller
 
     public function all()
     {
-        //dd($city);
         $news = DB::table('posts')
             ->get();
 
@@ -32,7 +31,6 @@ class PostController extends Controller
 
     public function fromCity($city)
     {
-        //dd($city);
         $news = DB::table('posts')
             ->where('city', $city)
             ->orWhere('city', '')
