@@ -21,6 +21,8 @@
 - Создаем пустую базу данных, редактируем .env файл.
 - Выполняем команды:
 
+php artisan key:generate
+
 php artisan migrate
 
 php artisan db:seed --class=PostSeeder
