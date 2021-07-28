@@ -34,7 +34,19 @@
     <h1>{{$news_item->title}}</h1>
     <p>{{$news_item->excerpt}}</p>
     <p>{{$news_item->full_text}}</p>
-
+    <br>
+    <h2>Похожие новости</h2>
+    <div class="row">
+        @foreach ($related_news as $item)
+            <div class="col-4 mb-2">
+                <a href="/news-item/{{$item->id}}">
+                    <strong>
+                        {{ $item->title }}
+                    </strong>
+                </a>
+            </div>
+        @endforeach
+    </div>
 </div>
 </body>
 </html>

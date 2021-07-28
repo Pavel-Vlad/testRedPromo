@@ -28,7 +28,12 @@ class PostController extends Controller
     public function single($id)
     {
         $news_item = DB::table('posts')->where('id', $id)->first();
-        return view('single', ['news_item' => $news_item]);
+        $title = $news_item->title;
+        $related_news = DB::table('posts')->where('excerpt', 'like', '% '.$title.' %')->limit(3)->get();
+        return view('single', [
+            'news_item' => $news_item,
+            'related_news' => $related_news
+            ]);
     }
     /**
      * Show the form for creating a new resource.
