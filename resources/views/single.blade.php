@@ -34,6 +34,8 @@
     <h1>{{$news_item->title}}</h1>
     <p>{{$news_item->excerpt}}</p>
     <p>{{$news_item->full_text}}</p>
+    <a href="/to-favor/{{$news_item->id}}" class="btn btn-dark">в избранные</a>
+    <br>
     <br>
     <h2>Похожие новости</h2>
     <div class="row">
