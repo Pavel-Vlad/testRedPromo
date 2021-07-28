@@ -25,7 +25,11 @@
             </li>
         </ul>
     </nav>
-
+    <form action="/findnews" method="post">
+        @csrf
+        <input type="text" name="findtext">
+        <input type="submit" value="Искать">
+    </form>
     <h1>Главная</h1>
     <div class="row">
         @foreach ($news as $item)

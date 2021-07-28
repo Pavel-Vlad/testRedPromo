@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>TestRedPromo - @yield('title')</title>
+    <title>Laravel</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -19,15 +19,25 @@
     <nav>
         <ul>
             <li>
+                <a href="/">
+                    На главную
+                </a>
+            </li>
+            <li>
                 <a href="/news-all">
                     Все новости здесь
                 </a>
             </li>
         </ul>
     </nav>
-    <h1>Главная</h1>
+    <form action="/findnews" method="post">
+        @csrf
+        <input type="text" name="findtext">
+        <input type="submit" value="Искать">
+    </form>
+    <h2>Результаты поиска</h2>
     <div class="row">
-        @foreach ($news as $item)
+        @foreach ($results as $item)
             <div class="col-4 mb-2">
                 <a href="/news-item/{{$item->id}}">
                     <strong>

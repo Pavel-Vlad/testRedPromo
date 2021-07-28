@@ -8,11 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $news = DB::table('posts')->where('is_favorite', '1')->get();
@@ -34,6 +30,20 @@ class PostController extends Controller
             'news_item' => $news_item,
             'related_news' => $related_news
             ]);
+    }
+
+    public function find(Request $request)
+    {
+        $findtext = $request->findtext;
+        $results = DB::table('posts')
+            ->where('title', 'like', '%'.$findtext.'%')
+            ->orWhere('excerpt', 'like', '%'.$findtext.'%')
+            ->orWhere('full_text', 'like', '%'.$findtext.'%')
+            ->get();
+
+        return view('findresults', [
+            'results' => $results,
+        ]);
     }
     /**
      * Show the form for creating a new resource.
